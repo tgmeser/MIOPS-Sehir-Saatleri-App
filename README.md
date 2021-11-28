@@ -1,5 +1,6 @@
 # MIOPS-Sehir-Saatleri-App
 "Mücteba Eser"
+
 Şehirlere ait bilgilerini kaydeden Native Android uygulama
 
 - Kullanılan Android Bileşenleri
