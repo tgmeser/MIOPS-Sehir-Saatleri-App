@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/cityListFragment">
+
+    <fragment
+        android:id="@+id/cityListFragment"
+        android:name="com.babyapps.citytimeapp.ui.city_list.CityListFragment"
+        android:label="City List"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_cityListFragment_to_upsertFragment"
+            app:destination="@id/upsertFragment" />
+        <action
+            android:id="@+id/action_cityListFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+        <action
+            android:id="@+id/action_cityListFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/upsertFragment"
+        android:name="com.babyapps.citytimeapp.ui.city_upsert.UpsertFragment"
+        android:label="Upsert City"
+        tools:layout="@layout/fragment_upsert">
+        <action
+            android:id="@+id/action_upsertFragment_to_cityListFragment"
+            app:destination="@id/cityListFragment" />
+
+        <argument
+            android:name="city"
+            app:argType="com.babyapps.citytimeapp.data.City" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.babyapps.citytimeapp.ui.city_add.AddFragment"
+        android:label="Add City"
+        tools:layout="@layout/fragment_add">
+
+        <action
+            android:id="@+id/action_addFragment_to_cityListFragment"
+            app:destination="@id/cityListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.babyapps.citytimeapp.ui.city_update.UpdateFragment"
+        android:label="Update City"
+        tools:layout="@layout/fragment_update">
+        <argument
+            android:name="city"
+            app:argType="com.babyapps.citytimeapp.data.City" />
+        <action
+            android:id="@+id/action_updateFragment_to_cityListFragment"
+            app:destination="@id/cityListFragment" />
+    </fragment>
+</navigation>
